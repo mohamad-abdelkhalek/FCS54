@@ -25,4 +25,22 @@ def isPalindrome(string):
         return False
     
 # print(isPalindrome("Never odd or even"))
+
+def isBalanced(expression):
+    stack = []
+    matching = {')': '(', '}': '{', ']': '['}
     
+    for i in expression:
+        if i in matching.values():
+            stack.append(i)
+        
+        elif i in matching:
+            if stack and stack[-1] == matching[i]:
+                stack.pop()
+                
+            else:
+                return False
+    
+    return not stack
+    
+# print(isBalanced("(1+2)-3*[41+6]"))
