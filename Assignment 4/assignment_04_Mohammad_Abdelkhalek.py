@@ -44,3 +44,28 @@ def isBalanced(expression):
     return not stack
     
 # print(isBalanced("(1+2)-3*[41+6]"))
+
+
+def decodeMIB(message):
+    stack = []
+    
+    for i in message:
+        if i == '*':
+            if stack:
+                stack.pop()
+        else:
+            stack.append(i)
+            
+    return ''.join(stack)
+
+# print(decodeMIB("SIVLE****** DAED TNSI ***"))
+
+
+
+
+
+
+        
+
+        
+    
