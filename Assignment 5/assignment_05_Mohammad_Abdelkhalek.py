@@ -38,3 +38,10 @@ class BST:
         self.inOrder(current.left)
         print(current.value)
         self.inOrder(current.right)
+        
+    def preOrder(self, current):
+        if current is None:
+            return
+        print(current.value)
+        self.preOrder(current.left)
+        self.preOrder(current.right)
