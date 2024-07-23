@@ -31,3 +31,10 @@ class BST:
             self.root = n
         else:
             self.addHelper(n, self.root)
+            
+    def inOrder(self, current):
+        if current is None:
+            return
+        self.inOrder(current.left)
+        print(current.value)
+        self.inOrder(current.right)
