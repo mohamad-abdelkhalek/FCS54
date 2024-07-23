@@ -57,3 +57,33 @@ class BST:
         while current.left is not None:
             current = current.left
         return current
+    
+    def deleteNode(self, current, value):
+        if current is None:
+            return current
+        
+        if value < current.value:
+            current.left = self.deleteNode(current.left, value)
+        elif value > current.value:
+            current.right = self.deleteNode(current.right, value)
+        else:
+            # Node with only one child or no child
+            if current.left is None:
+                temp = current.right
+                current = None
+                return temp
+            elif current.right is None:
+                temp = current.left
+                current = None
+                return temp
+            
+            # Node with two children: Get the inorder successor (smallest in the right subtree)
+            temp = self.findMin(current.right)
+            
+            # Copy the inorder successor's content to this node
+            current.value = temp.value
+            
+            # Delete the inorder successor
+            current.right = self.deleteNode(current.right, temp.value)
+        
+        return current
