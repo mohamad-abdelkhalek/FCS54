@@ -45,3 +45,10 @@ class BST:
         print(current.value)
         self.preOrder(current.left)
         self.preOrder(current.right)
+    
+    def postOrder(self, current):
+        if current is None:
+            return
+        self.postOrder(current.left)
+        self.postOrder(current.right)
+        print(current.value)
