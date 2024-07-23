@@ -7,3 +7,6 @@ class Node:
         self.value = value
         
 class BST:
+    
+    def __init__(self):
+        self.root = None
