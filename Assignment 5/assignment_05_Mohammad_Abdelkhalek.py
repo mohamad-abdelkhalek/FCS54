@@ -52,3 +52,8 @@ class BST:
         self.postOrder(current.left)
         self.postOrder(current.right)
         print(current.value)
+        
+    def findMin(self, current):
+        while current.left is not None:
+            current = current.left
+        return current
