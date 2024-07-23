@@ -5,3 +5,5 @@ class Node:
         self.right = right
         self.left = left
         self.value = value
+        
+class BST:
