@@ -24,3 +24,10 @@ class BST:
                 n.parent = current
             else:
                 self.addHelper(n, current.right)
+                
+    def add(self, value):
+        n = Node(value)
+        if self.root is None:  # tree is empty
+            self.root = n
+        else:
+            self.addHelper(n, self.root)
