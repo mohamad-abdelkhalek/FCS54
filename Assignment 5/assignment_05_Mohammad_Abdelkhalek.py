@@ -10,3 +10,17 @@ class BST:
     
     def __init__(self):
         self.root = None
+        
+    def addHelper(self, n, current):
+        if current.value > n.value:  # go to left
+            if current.left is None:  # current does not have a left child
+                current.left = n
+                n.parent = current
+            else:
+                self.addHelper(n, current.left)
+        else:  # go to right
+            if current.right is None:
+                current.right = n
+                n.parent = current
+            else:
+                self.addHelper(n, current.right)
