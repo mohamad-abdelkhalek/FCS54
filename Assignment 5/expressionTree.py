@@ -25,3 +25,16 @@ def printEquation(root):
         equation = equation[1:-1]
     
     return equation
+
+
+# Equation: ((3+5)*2)-8
+
+root = Node('-')
+root.left = Node('*')
+root.right = Node('8')
+root.left.left = Node('+')
+root.left.right = Node('2')
+root.left.left.left = Node('3')
+root.left.left.right = Node('5')
+
+print(print_equation(root))  # Output: ((3+5)*2)-8
